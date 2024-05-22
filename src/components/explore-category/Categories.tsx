@@ -30,7 +30,7 @@ const Categories = () => {
 
 export default Categories;
 
-const ExploreBox = (props) => {
+const ExploreBox = (props:any) => {
     return (
         <>
            <div className="col-md-3 mt-3">
