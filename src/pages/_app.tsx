@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import '@/styles/banner.css';
 import '@/styles/hotel-details.css';
+import '@/styles/search-page.css';
 
 import type { AppProps } from "next/app";
 

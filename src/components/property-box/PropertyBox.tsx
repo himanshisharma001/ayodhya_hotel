@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { get } from '@/api1/apiUtils';
 
 const PropertyBox = () => {
   return (
@@ -25,6 +26,21 @@ const PropertyBox = () => {
 export default PropertyBox;
 
 const PropertyBoxDetails = () => {
+  const[hotelList, setHotelList] = useState([]);
+  
+useEffect(() => {
+  
+async function fetchHotelList() {
+  const res = await get("/hotels") as any; 
+  // console.log(res);
+  setHotelList(res?.hotels)
+}
+
+fetchHotelList();
+
+},[]);
+
+
   const menuslides = {
     dots: false,
     infinite: true,
@@ -60,6 +76,20 @@ const PropertyBoxDetails = () => {
          <div className="mt-4" style={{overflowX:'hidden'}}>
         <div className="carousel-container">
           <Slider {...menuslides}>
+
+          {hotelList.map((data:any) => {
+
+            // console.log(data);
+            // console.log(data.images);
+            return(
+              <>
+                <SliderBoxImage image={data.images} />
+              </>
+            )
+          
+          })}
+
+           {/* <SliderBoxImage />
            <SliderBoxImage />
            <SliderBoxImage />
            <SliderBoxImage />
@@ -70,8 +100,7 @@ const PropertyBoxDetails = () => {
            <SliderBoxImage />
            <SliderBoxImage />
            <SliderBoxImage />
-           <SliderBoxImage />
-           <SliderBoxImage />
+           <SliderBoxImage /> */}
           </Slider>
         </div>
       </div>
@@ -79,18 +108,18 @@ const PropertyBoxDetails = () => {
     )
 }
 
-const SliderBoxImage = () => {
+const SliderBoxImage = (props:any) => {
   return (
     <>
     <div style={{margin:'8px',cursor:'pointer'}}>
       <div className="slder-contentbox">
-    <img src="https://is1-2.housingcdn.com/01c16c28/1e5996b303028164633ea5a8ae7f48fc/v0/fs/4_bhk_villa-for-rent-injambakkam-Chennai-others.jpg" alt="slider-image" className='img-fluid slder-boximgsize' />
+    <img src={props.image} alt="slider-image" className='img-fluid slder-boximgsize' />
     
     <div className="top-right">
-      <h6 className='mt-2' style={{fontSize:'14px',fontWeight:'500'}}>5% OFF</h6>
+      <h6 className='mt-2' style={{fontSize:'14px',fontWeight:'500'}}>50% OFF</h6>
     </div>
     <div className="bottom-left">
-      <h6 className='mt-1'>From : <i className="bi bi-currency-dollar"></i> 135.00 /night</h6>
+      <h6 className='mt-1'>From : <i className="bi bi-currency-dollar"></i>130/night</h6>
     </div>
     </div>
     <div className='d-flex'>

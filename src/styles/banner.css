@@ -1,8 +1,16 @@
 .banner-main-szvws{
-    background-image: url('https://etinsights.et-edge.com/wp-content/uploads/2024/01/shutterstock_2412313153.jpg');
+    background:
+    linear-gradient(to bottom,  rgba(44, 44, 44, 0.384), rgba(46, 46, 46, 0.397)),
+    url('https://www.fabhotels.com/blog/wp-content/uploads/2024/01/e7237302-600x400-1.jpg')no-repeat;
+    background-position: 100% 100%;
     background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100%;
+    transition: 3s ease-in-out;
     padding: 60px;
+    /* height: 300px; */
+    
 
 }
 

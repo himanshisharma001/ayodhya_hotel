@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
 // Define API base URL and authentication header
 // const baseURL = 'http://';
-const baseURL = 'http://127.0.0.1:4000';
+const baseURL = 'https://hotel.newworldtrending.com/';
 
 // Create an instance of Axios with base configuration
 const api: AxiosInstance = axios.create({

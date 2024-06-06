@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+// import search from '../../assets/images/search.png';
+// import wishlist from '../../assets/images/heart.png';
+// import cart from '../../assets/images/bag.png';
 
 const Header = () => {
   return (
@@ -18,6 +21,9 @@ const Header = () => {
                 <li><a href="#">Menu</a></li>
                 <li><a href="#">Testimonial</a></li>
                 <li><a href="#">Contact</a></li>
+                {/* <li><a href="#"><img src={search} alt="icon" className='img-fluid'/></a></li>
+                <li><a href="#"><img src={wishlist} alt="icon" className='img-fluid'/></a></li>
+                <li><a href="#"><img src={cart} alt="icon" className='img-fluid'/></a></li> */}
             </ul>
             <h1 className="logo">Logo</h1>
         </div>
